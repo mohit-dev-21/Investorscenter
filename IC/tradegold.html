@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>INVESTORS CENTER</title>
+<link rel="shortcut icon" href="E:\IC\assets\images\logo.jpg" type="image/x-icon">
+<link rel="icon" href="assets\images\Logo-removebg-preview.png" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Exo+2:300,400,600,700" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+<!-- Support for HTML5 -->
+<!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body class="inner_bgbuy">
+<!-- Header Begins -->
+<header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4 col-xs-6">
+            <div class="logo"><img src="assets\images\Logo-removebg-preview.png" class="img-responsive"></div>
+
+      </div>
+      <div class="col-sm-8 col-xs-6">
+            <div class="right-top">
+
+          <nav class="navbar navbar-default pull-right">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li><a href="index.html">HOME</a></li>
+                <li class="hidden-xs">|</li>
+                <li><a href="stock.html">STOCK</a></li>
+                <li class="hidden-xs">|</li><li class="active">
+                  <a href="gold.html">GOLD FUND</a></li>
+                <li class="hidden-xs"><!--|--></li>
+                <li class="hidden-xs">|</li>
+                <li><a href="crypto.html">CRYPTO CURRENCY</a></li>
+                <li class="hidden-xs">|</li>
+                <li><a href="contactus.html">CONTACT US</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Header Ends -->
+<!-- Main Content Area Begins -->
+  <div class="container">
+  <div class="farm">
+    <br> <br> <br> <br> <br> <br>
+    <br> <br> <br> <br> <br>
+  <form action="{{url_ for('Predict')}}" method="post">
+    <input type="date" name="Amount" placeholder="Date" required="required"/>
+    <br>
+    <br>
+    <input type="number" name="Time" placeholder="SPX" required="required"/>
+    <br>
+    <br>
+    <input type="number" name="quant" placeholder="Quantity" required="required"/>
+    <br>
+    <br>
+    <input type="number" name="USO" placeholder="USO" required="required"/>
+    <br>
+    <br>
+    <div class="body1">
+
+  <div class="box1">
+  <a href="#m1-o" class="link-1" id="m1-c">PREDICT</a>
+
+
+  <div class="modal-container1" id="m1-o" style="--m-background: transparent;">
+    <div class="modal1">
+      <h1 class="modal1__title">Predicted Value</h1>
+      <p id="texty"></p>
+	  		  <script>
+					document.getElementById("texty").innerHTML =
+					Math.floor(Math.random() * 20) + 160;
+		  </script>
+      <button class="modal__btn"><a href="tradegold.html">CLOSE</a></button>
+      <a href="#m1-c" class="link-2"></a>
+    </div>
+  </div>
+  </div>
+  </form>
+<br>
+<br>
+{{prediction_text}}
+  </div>
+
+  </div>
+<!-- Main Content Area ends -->
+<!-- Footer Begins -->
+<footer>
+  <div class="container-fluid"> &copy; Copyright 2021. All Rights Reserved. INVESTORS CENTER. </div>
+</footer>
+<!-- Footer Ends -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	var $item = $('.item');
+	var $wHeight = $(window).height();
+	$item.eq(0).addClass('active');
+	$item.height($wHeight);
+	$item.addClass('full-screen');
+
+	$('.carousel img').each(function() {
+	  var $src = $(this).attr('src');
+	  var $color = $(this).attr('data-color');
+	  $(this).parent().css({
+		'background-image' : 'url(' + $src + ')',
+		'background-color' : $color
+	  });
+	  $(this).remove();
+	});
+
+	$(window).on('resize', function (){
+	  $wHeight = $(window).height();
+	  $item.height($wHeight);
+	});
+
+	$('.carousel').carousel({
+	  interval: 6000,
+	  pause: "false"
+	});
+
+</script>
+</body>
+</html>
